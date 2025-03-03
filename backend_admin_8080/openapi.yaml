@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Admin API
+  version: 1.0.0
+  description: API for managing products
+
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /products:
+    get:
+      summary: Retrieve a list of products
+      description: Retrieve all products from the store.
+      responses:
+        '200':
+          description: A list of products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      summary: Add a new product
+      description: Adds a new product to the store.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '201':
+          description: Product successfully added.
+        '400':
+          description: Invalid input.
+
+  /products/{id}:
+    get:
+      summary: Get a product by ID
+      description: Retrieve a single product by its ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the product to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: The requested product.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found.
+    put:
+      summary: Update a product by ID
+      description: Update a product's information by its ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the product to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: Product updated successfully.
+        '404':
+          description: Product not found.
+    delete:
+      summary: Delete a product by ID
+      description: Delete a product from the store by its ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the product to delete
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Product deleted successfully.
+        '404':
+          description: Product not found.
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the product.
+        title:
+          type: string
+          description: The title of the product.
+        price:
+          type: number
+          description: The price of the product.
+        description:
+          type: string
+          description: The description of the product.
+    ProductInput:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the product.
+        price:
+          type: number
+          description: The price of the product.
+        description:
+          type: string
+          description: The description of the product.

@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "category": "Electronics",
+      "title": "Smartphone X",
+      "price": 599,
+      "description": "A powerful smartphone with a great camera.",
+      "imageUrl": "https://avatars.mds.yandex.net/get-mpic/4519143/img_id3393629710801305538.jpeg/orig"
+    },
+    {
+      "id": 2,
+      "category": "Clothing",
+      "title": "Cotton T-Shirt",
+      "price": 25,
+      "description": "Comfortable and stylish cotton t-shirt.",
+          "imageUrl": "https://cdn1.ozone.ru/s3/multimedia-i/c600/6883959870.jpg"
+    },
+    {
+      "id": 3,
+      "category": "Electronics",
+      "title": "Wireless Headphones",
+      "price": 120,
+      "description": "High-quality wireless headphones with noise cancellation.",
+          "imageUrl": "https://avatars.mds.yandex.net/i?id=0d2788485e9b9d9543de3e826930a5b4_l-4430658-images-thumbs&n=13"
+    },
+    {
+      "id": 4,
+      "category": "Books",
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "price": 15,
+      "description": "A hilarious science fiction adventure.",
+          "imageUrl": "https://i.ebayimg.com/images/g/2C8AAOSwkShY9xeE/s-l500.jpg"
+    },
+    {
+      "id": 5,
+      "category": "Clothing",
+      "title": "Denim Jeans",
+      "price": 75,
+      "description": "Classic denim jeans for everyday wear.",
+      "imageUrl": "https://sc01.alicdn.com/kf/HTB1JDATJVXXXXcOXXXXq6xXFXXXg.jpg"
+    },
+    {
+      "id": 6,
+      "category": ["Electronics", "Home"],
+      "title": "Smart Home Speaker",
+      "price": 50,
+      "description": "Voice-controlled smart speaker for your home.",
+          "imageUrl": "https://avatars.mds.yandex.net/get-mpic/11549745/2a0000018ecd4513aa7a5932f84b9c367657/optimize"
+    }
+  ]
