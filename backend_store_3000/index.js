@@ -24,8 +24,9 @@ app.get('/mainmarket', (req, res) => {
       const products = JSON.parse(productsJson);
 
       const productCards = products.map(product => `
+        
         <div class="product-card">
-          <img src="" alt="${product.title}" width="150">
+          <img src="${product.imageUrl}" alt="${product.title}" width="150">
           <h3>${product.title}</h3>
           <p>Price: $${product.price}</p>
           <p>${product.description}</p>
