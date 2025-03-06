@@ -144,6 +144,57 @@ app.get('/products/:id', (req, res) => {
 
 /**
  * @swagger
+ * /products/category/{category}:
+ *   get:
+ *     summary: Retrieve products by category
+ *     description: Get all products that belong to a specified category.
+ *     parameters:
+ *       - in: path
+ *         name: category
+ *         required: true
+ *         description: The category of products to retrieve
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: A list of products in the specified category.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                     description: The ID of the product.
+ *                   title:
+ *                     type: string
+ *                     description: The title of the product.
+ *                   price:
+ *                     type: number
+ *                     description: The price of the product.
+ *                   category:
+ *                     type: string
+ *                     description: The category of the product.
+ *       404:
+ *         description: No products found in this category.
+ */
+app.get('/products/category/:category', (req, res) => {
+    const category = req.params.category;
+    const products = readProducts();
+    
+    const filteredProducts = products.filter(p => p.category === category);
+
+    if (filteredProducts.length > 0) {
+        res.json(filteredProducts);
+    } else {
+        res.status(404).json({ message: 'No products found in this category' });
+    }
+});
+
+/**
+ * @swagger
  * /products/{id}:
  *   put:
  *     summary: Update a product by ID
