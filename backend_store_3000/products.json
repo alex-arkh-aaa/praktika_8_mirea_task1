@@ -13,7 +13,7 @@
       "title": "Cotton T-Shirt",
       "price": 25,
       "description": "Comfortable and stylish cotton t-shirt.",
-      "imageUrl": "images/t-shirt.jpg"
+          "imageUrl": "images/t-shirt.jpg"
     },
     {
       "id": 3,
@@ -21,7 +21,7 @@
       "title": "Wireless Headphones",
       "price": 120,
       "description": "High-quality wireless headphones with noise cancellation.",
-      "imageUrl": "images/headphones.webp"
+          "imageUrl": "images/headphones.webp"
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "title": "The little prince",
       "price": 15,
       "description": "We are responsible for those who have been tamed, so we need to appreciate and protect our loved ones.",
-      "imageUrl": "images/Prince.webp"
+          "imageUrl": "images/Prince.webp"
     },
     {
       "id": 5,
@@ -45,6 +45,6 @@
       "title": "Smart Home Speaker",
       "price": 50,
       "description": "Voice-controlled smart speaker for your home.",
-      "imageUrl": "https://avatars.mds.yandex.net/get-mpic/11549745/2a0000018ecd4513aa7a5932f84b9c367657/optimize"
+          "imageUrl": "images/smartspeaker.jpg"
     }
   ]
