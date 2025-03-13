@@ -4,6 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const { WebSocketServer } = require('ws');
+const http = require('http');
 
 const app = express();
 const PORT = 8080;
@@ -273,7 +275,37 @@ app.delete('/products/:id', (req, res) => {
         res.status(404).json({ message: 'Product not found' });
     }
 });
+const server = http.createServer(app);
 
-app.listen(PORT, () => {
+// 2. Создаем WebSocket Server
+const wss = new WebSocketServer({ server });
+
+wss.on('connection', ws => {
+    console.log('Admin client connected via WebSocket');
+
+    ws.on('message', message => {
+        console.log(`Admin received: ${message}`);
+        // Optionally, process admin messages here
+    });
+
+    ws.on('close', () => {
+        console.log('Admin client disconnected from WebSocket');
+    });
+
+    ws.on('error', error => {
+        console.error('Admin WebSocket error:', error);
+    });
+
+    ws.send('Welcome to the Admin WebSocket server!');
+});
+
+// Обработчик ошибок для WebSocket Server
+wss.on('error', (error) => {
+    console.error('WebSocket server error:', error);
+});
+
+// 3. Запускаем сервер
+server.listen(PORT, () => {
     console.log(`Admin server running on http://localhost:${PORT}`);
+    console.log(`Admin WebSocket server also running on port ${PORT}`);
 });

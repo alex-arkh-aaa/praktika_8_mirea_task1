@@ -1,50 +1,58 @@
 [
-    {
-      "id": 1,
-      "category": "Electronics",
-      "title": "Smartphone X",
-      "price": 599,
-      "description": "A powerful smartphone with a great camera.",
-      "imageUrl": "images/smartphone.webp"
-    },
-    {
-      "id": 2,
-      "category": "Clothing",
-      "title": "Cotton T-Shirt",
-      "price": 25,
-      "description": "Comfortable and stylish cotton t-shirt.",
-          "imageUrl": "images/t-shirt.jpg"
-    },
-    {
-      "id": 3,
-      "category": "Electronics",
-      "title": "Wireless Headphones",
-      "price": 120,
-      "description": "High-quality wireless headphones with noise cancellation.",
-          "imageUrl": "images/headphones.webp"
-    },
-    {
-      "id": 4,
-      "category": "Books",
-      "title": "The little prince",
-      "price": 15,
-      "description": "We are responsible for those who have been tamed, so we need to appreciate and protect our loved ones.",
-          "imageUrl": "images/Prince.webp"
-    },
-    {
-      "id": 5,
-      "category": "Clothing",
-      "title": "Denim Jeans",
-      "price": 75,
-      "description": "Classic denim jeans for everyday wear.",
-      "imageUrl": "images/jeans.jpg"
-    },
-    {
-      "id": 6,
-      "category": ["Electronics", "Home"],
-      "title": "Smart Home Speaker",
-      "price": 50,
-      "description": "Voice-controlled smart speaker for your home.",
-          "imageUrl": "images/smartspeaker.jpg"
-    }
-  ]
+  {
+    "id": 1,
+    "category": "Electronics",
+    "title": "Smartphone X",
+    "price": 599,
+    "description": "A powerful smartphone with a great camera.",
+    "imageUrl": "images/smartphone.webp"
+  },
+  {
+    "id": 2,
+    "category": "Clothing",
+    "title": "Cotton T-Shirt",
+    "price": 25,
+    "description": "Comfortable and stylish cotton t-shirt.",
+    "imageUrl": "images/t-shirt.jpg"
+  },
+  {
+    "id": 3,
+    "category": "Electronics",
+    "title": "Wireless Headphones",
+    "price": 120,
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "imageUrl": "images/headphones.webp"
+  },
+  {
+    "id": 4,
+    "category": "Books",
+    "title": "The little prince",
+    "price": 15,
+    "description": "We are responsible for those who have been tamed, so we need to appreciate and protect our loved ones.",
+    "imageUrl": "images/Prince.webp"
+  },
+  {
+    "id": 5,
+    "category": "Clothing",
+    "title": "Denim Jeans",
+    "price": 75,
+    "description": "Classic denim jeans for everyday wear.",
+    "imageUrl": "images/jeans.jpg"
+  },
+  {
+    "id": 6,
+    "category": [
+      "Electronics",
+      "Home"
+    ],
+    "title": "Smart Home Speaker",
+    "price": 50,
+    "description": "Voice-controlled smart speaker for your home.",
+    "imageUrl": "images/smartspeaker.jpg"
+  },
+  {
+    "title": "string",
+    "price": 89898989,
+    "id": 7
+  }
+]

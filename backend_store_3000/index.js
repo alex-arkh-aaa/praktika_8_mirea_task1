@@ -1,4 +1,6 @@
 const express = require('express');
+const { WebSocketServer } = require('ws');
+
 const fs = require('fs');
 const path = require('path');
 const { ApolloServer, gql } = require('apollo-server-express');
@@ -6,10 +8,8 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const app = express();
 const PORT = 3000;
 
-// Middleware для статических файлов
 app.use(express.static(path.join(__dirname)));
 
-// 1. Определяем GraphQL схему
 const typeDefs = gql`
   type Product {
     title: String
@@ -24,7 +24,6 @@ const typeDefs = gql`
   }
 `;
 
-// 2.  Определяем резолверы (как получать данные)
 const resolvers = {
   Query: {
     products: async () => {
@@ -39,15 +38,12 @@ const resolvers = {
   },
 };
 
-// 3. Создаем экземпляр Apollo Server
 const server = new ApolloServer({ typeDefs, resolvers });
 
-// Асинхронная функция для запуска Apollo Server и Express
 async function startApolloServer() {
     await server.start();
     server.applyMiddleware({ app, path: '/graphql' });
 
-    // Оставляем ваш существующий код для /mainmarket
     app.get('/mainmarket', (req, res) => {
         console.log('Reading index.html');
         fs.readFile(path.join(__dirname, 'index.html'), 'utf8', (err, html) => {
@@ -80,12 +76,10 @@ async function startApolloServer() {
       });
     });
 
-    // Запускаем Express-сервер
     app.listen(PORT, () => {
       console.log(`Store server running on http://localhost:${PORT}`);
       console.log(`GraphQL API ready at http://localhost:${PORT}/graphql`);
     });
 }
 
-// Запускаем сервер
 startApolloServer();
